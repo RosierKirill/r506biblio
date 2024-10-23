@@ -49,10 +49,19 @@
                         </div>
 
                         <div>
+                            <label class="block font-medium text-sm text-gray-700" for="publication">
+                                Publication
+                            </label>
+                            <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" id="publication" name="publication" type="date" value="{{ old('images') }}" required="required" autocomplete="publication">
+                            @error('publication')
+                                <p class="text-red-500 text-xs mt-1"><strong>{{ $message }}</strong></p>
+                            @enderror
+                        </div>
+                                                <div>
                             <label class="block font-medium text-sm text-gray-700" for="images">
                                 Image
                             </label>
-                            <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" id="images" name="images" type="images" value="{{ old('images') }}" required="required" autocomplete="images">
+                            <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" id="images" name="images" type="file" value="{{ old('images') }}" required="required" autocomplete="images">
                             @error('images')
                                 <p class="text-red-500 text-xs mt-1"><strong>{{ $message }}</strong></p>
                             @enderror

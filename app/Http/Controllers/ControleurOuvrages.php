@@ -17,6 +17,7 @@ class ControleurOuvrages extends Controller
     
     public function store(Request $request)
     {	$request->validate([
+            'id'=> 'required',
             'titre' => 'required',
             'auteur' => 'required',
             'editeur' => 'required',
