@@ -60,14 +60,28 @@
                         </div>
 
                         <div>
-                            <label class="block font-medium text-sm text-gray-700" for="password">
+                            <label class="block font-medium text-sm text-gray-700" for="passe">
                                 Mot de passe
                             </label>
-                            <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" id="password" name="password" type="password" required="required" autocomplete="new-password">
-                            @error('password')
+                            <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" id="passe" name="passe" type="password" required="required" autocomplete="new-password">
+                            @error('passe')
                                 <p class="text-red-500 text-xs mt-1"><strong>{{ $message }}</strong></p>
                             @enderror
                         </div>
+                        <div>
+                            <label class="block font-medium text-sm text-gray-700" for="blocage">
+                                Blocage
+                            </label>
+                                <select id="blocage" name="blocage" required="required" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full">
+                                    <option value="" disabled selected>Choisir une option</option>
+                                    <option value="1">Oui</option>
+                                    <option value="0">Non</option>
+                            </select>
+                            @error('blocage')
+                                <p class="text-red-500 text-xs mt-1"><strong>{{ $message }}</strong></p>
+                            @enderror
+                        </div>
+
 
                         <button type="submit" class="inline-flex items-right px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest" style="margin-top:20px;background-color:#3B71CA;">Enregistrer</button>
                     </form>

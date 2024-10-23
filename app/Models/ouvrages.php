@@ -10,9 +10,13 @@ class ouvrages extends Model
     use HasFactory;
 
     protected $fillable = [
+        "id",
         'titre',
         'auteur',
         'editeur',
-        'images',
+        'isbn',
+        'pages',
+        'publication',
+        'image'
     ];
 }

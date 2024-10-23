@@ -15,6 +15,6 @@ class usagers extends Model
         'email',
         'identifiant',
         'passe',
-        'blocage',
+        'blocage'
     ];
 }

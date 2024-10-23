@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\ouvrages;
 use Illuminate\Http\Request;
 
 class ControleurOuvrages extends Controller
 {
     public function index()
-    {	$ouvrages = ouvrages::orderBy('nom','desc')->paginate(5);
+    {	$ouvrages = ouvrages::orderBy('auteur')->paginate(5);
         return view('ouvrages.index', compact('ouvrages'));
     }
     
@@ -25,34 +25,32 @@ class ControleurOuvrages extends Controller
         
         ouvrages::create($request->post());
 
-        return redirect()->route('ouvrages.index')->with('success','Compte usager crée.');
+        return redirect()->route('ouvrages.index')->with('success','Ouvrage crée.');
     }
     
     public function show(ouvrages $ouvrage)
-    {	return view('ouvrages.show',compact('usager'));
+    {	return view('ouvrages.show',compact('ouvrage'));
     }
 
     public function edit(ouvrages $ouvrage)
-    {	return view('ouvrages.edit',compact('usager'));
+    {	return view('ouvrages.edit',compact('ouvrage'));
     }
     
     public function update(Request $request, ouvrages $ouvrage)
     {	$request->validate([
-            'nom' => 'required',
-            'prenom' => 'required',
-            'email' => 'required',
-            'identifiant' => 'required',
-            'passe' => 'required',
-            'blocage' => 'required',
-        ]);
+            'titre' => 'required',
+            'auteur' => 'required',
+            'editeur' => 'required',
+            'images' => 'required',
+            ]);
         
         $ouvrage->fill($request->post())->save();
 
-        return redirect()->route('ouvrages.index')->with('success','Compte usager sauvegardé');
+        return redirect()->route('ouvrages.index')->with('success','Ouvrage sauvegardé');
     }
     
     public function destroy(ouvrages $ouvrage)
     {	$ouvrage->delete();
-        return redirect()->route('ouvrages.index')->with('success','Compte usager supprimé.');
+        return redirect()->route('ouvrages.index')->with('success','Ouvrage supprimé.');
     }
 }

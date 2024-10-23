@@ -18,9 +18,9 @@
                     <x-nav-link :href="route('usagers.index')" :active="request()->routeIs('usagers.index')">
                         {{ __('Usagers') }}
                     </x-nav-link>
-                    {{-- <x-nav-link :href="route('ouvrages.index')" :active="request()->routeIs('ouvrages.index')">
+                    <x-nav-link :href="route('ouvrages.index')" :active="request()->routeIs('ouvrages.index')">
                         {{ __('Ouvrages') }}
-                    </x-nav-link> --}}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -77,9 +77,9 @@
             <x-responsive-nav-link :href="route('usagers.index')" :active="request()->routeIs('usagers.index')">
                 {{ __('Usagers') }}
             </x-responsive-nav-link>
-            {{-- <x-responsive-nav-link :href="route('ouvrages.index')" :active="request()->routeIs('ouvrages.index')">
+            <x-responsive-nav-link :href="route('ouvrages.index')" :active="request()->routeIs('ouvrages.index')">
                 {{ __('Ouvrages') }}
-            </x-responsive-nav-link> --}}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
