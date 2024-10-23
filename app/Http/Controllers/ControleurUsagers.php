@@ -28,7 +28,7 @@ class ControleurUsagers extends Controller
         
         usagers::create($request->post());
 
-        return redirect()->route('usagers.index')->with('success','Compte usager crÃ©e.');
+        return redirect()->route('usagers.index')->with('success','Compte usager crée.');
     }
     
     public function show(usagers $usager)
@@ -51,13 +51,11 @@ class ControleurUsagers extends Controller
         
         $usager->fill($request->post())->save();
 
-        return redirect()->route('usagers.index')->with('success','Compte usager sauvegardÃ©');
+        return redirect()->route('usagers.index')->with('success','Compte usager sauvegardé');
     }
     
     public function destroy(usagers $usager)
     {	$usager->delete();
-        return redirect()->route('usagers.index')->with('success','Compte usager supprimÃ©.');
+        return redirect()->route('usagers.index')->with('success','Compte usager supprimé.');
     }
-
-    
 }
